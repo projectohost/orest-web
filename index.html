@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Одягу</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Підключення Font Awesome для іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Підключення AOS для анімацій -->
+    <link hhttps://st2.depositphotos.com/3591429/11449/i/450/depositphotos_114497846-stock-photo-silhouettes-of-business-group.jpg$0ref="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-image">
+            <img src="https://st2.depositphotos.com/3591429/11449/i/450/depositphotos_114497846-stock-photo-silhouettes-of-business-group.jpg" alt="Header Image">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Кошик (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Особливості нашого магазину:</h2>
+        <div class="features">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-box-open"></i>
+                <h3>Широкий вибір</h3>
+                <p>Ми пропонуємо великий асортимент стильного та якісного одягу на будь-який смак.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-laptop"></i>
+                <h3>Зручний інтерфейс</h3>
+                <p>Інтуїтивно зрозумілий сайт, який дозволяє швидко знаходити те, що вам потрібно.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-tshirt"></i>
+                <h3>Якість та стиль</h3>
+                <p>Тільки найкращі бренди та матеріали, які гарантують комфорт і довговічність.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-percent"></i>
+                <h3>Спеціальні пропозиції</h3>
+                <p>Не пропустіть вигідні акції та знижки, що доступні тільки для наших клієнтів!</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-truck"></i>
+                <h3>Зручна доставка</h3>
+                <p>Швидка та зручна доставка по всій Україні за доступною ціною.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-headset"></i>
+                <h3>Клієнтська підтримка</h3>
+                <p>Наші менеджери завжди готові допомогти вам з вибором і будь-якими питаннями.</p>
+            </div>
+        </div>
+        <h2>Популярні товари</h2>
+        <section id="catalog">
+            <!-- <div class="filters">
+                <button onclick="filterItems('all')" class="filter-btn">Усі</button>
+                <button onclick="filterItems('hoodie')" class="filter-btn">Кофти</button>
+                <button onclick="filterItems('jacket')" class="filter-btn">Куртки</button>
+                <button onclick="filterItems('shoes')" class="filter-btn">Кросівки</button>
+                <button onclick="filterItems('accessory')" class="filter-btn">Аксесуари</button>
+                <button onclick="filterItems('pants')" class="filter-btn">Штани</button>
+            </div> -->
+            <div class="filters">
+                <select onchange="filterItems(this.value)" class="filter-select">
+                    <option value="all">Усі</option>
+                    <option value="hoodie">Кофти</option>
+                    <option value="jacket">Куртки</option>
+                    <option value="shoes">Кросівки</option>
+                    <option value="accessory">Аксесуари</option>
+                    <option value="pants">Штани</option>
+                </select>
+            </div>
+
+            <div class="product-list">
+                <!-- Product 1 -->
+                <div class="product hoodie" data-aos="fade-up">
+                    <img src="https://images.shafastatic.net/1671271438" alt="худі NIKE">
+                    <h3>худі JORDAN</h3>
+                    <p>Ціна: 1500 грн</p>
+                    <button onclick="addToCart('худі NIKE', 1100)">Додати в кошик</button>
+                </div>
+                <!-- Product 2 -->
+                <div class="product jacket" data-aos="fade-up">
+                    <img src="https://napa24.ru/upload/resize_cache/iblock/146/600_600_140cd750bba9870f18aada2478b24840a/c92ctblkgku5o8hl1a43i68s4qwoyyof.jpg" alt="куртка NAPAPIJRI">
+                    <h3>куртка NAPAPIJRI</h3>
+                    <p>Ціна: 2500 грн</p>
+                    <button onclick="addToCart('куртка NAPAPIJRI', 2500)">Додати в кошик</button>
+                </div>
+                <!-- Product 3 -->
+                <div class="product shoes" data-aos="fade-up">
+                    <img src="https://images.prom.ua/4155680231_w600_h600_4155680231.jpg" alt="кросівки New Balance 2002R GORE-TEX">
+                    <h3>кросівки New Balance 2002R GORE-TEX</h3>
+                    <p>Ціна: 2500 грн</p>
+                    <button onclick="addToCart('кросівки New Balance', 2000)">Додати в кошик</button>
+                </div>
+                <!-- Product 4 -->
+                <div class="product pants" data-aos="fade-up">
+                    <img src="https://image-thumbs.shafastatic.net/-339273376_310_430" alt="штани NIKE">
+                    <h3>штани NIKE</h3>
+                    <p>Ціна: 1950 грн</p>
+                    <button onclick="addToCart('штани NIKE', 1200)">Додати в кошик</button>
+                </div>
+                <!-- Product 5 -->
+                <div class="product accessory" data-aos="fade-up">
+                    <img src="https://www.universestore.com.ua/wp-content/uploads/2024/05/photoroom_20240501_144653.jpeg" alt="Кепка Weekend Offender">
+                    <h3>Кепка Weekend Offender</h3>
+                    <p>Ціна: 1450 грн</p>
+                    <button onclick="addToCart('Кепка Weekend Offender', 1450)">Додати в кошик</button>
+                </div>
+                <!-- Product 6 -->
+                <div class="product accessory" data-aos="fade-up">
+                    <img src="https://ireland.apollo.olxcdn.com/v1/files/nozafiices7h3-UA/image;s=750x1000" alt="сумка NIKE">
+                    <h3>сумка NIKE</h3>
+                    <p>Ціна: 1200 грн</p>
+                    <button onclick="addToCart('сумка NIKE', 1200)">Додати в кошик</button>
+                </div>
+                <!-- Product 7 -->
+                <div class="product accessory" data-aos="fade-up">
+                    <img src="https://cdn.kasta.ua/image/1035/s3/supplier_provided_link/feed/792/ad8/a14/469/97e/489/605/b35/3d2.jpeg" alt="Шапка Arc'teryx">
+                    <h3>Шапка Arc'teryx</h3>
+                    <p>Ціна: 950 грн</p>
+                    <button onclick="addToCart('Шапка Arc\'teryx', 950)">Додати в кошик</button>
+                </div>
+                <!-- Product 8 -->
+                <div class="product jacket" data-aos="fade-up">
+                    <img src="https://img.modivo.cloud/product(0/d/d/a/0dda6bfd3a42009a769f2d74fbc7c422c10dd9c5_20_0686487403086.jpg,jpg)/arcteryx-zimova-kurtka-atom-24477-sinii-regular-fit.jpg" alt="Куртка Arc'teryx">
+                    <h3>Куртка Arc'teryx</h3>
+                    <p>Ціна: 3700 грн</p>
+                    <button onclick="addToCart('Куртка Arc\'teryx', 3700)">Додати в кошик</button>
+                </div>
+                <div class="product  shoes" data-aos="fade-up">
+                    <img src="https://vzutistore.com.ua/8795-large_default/nike-cortez-nylon-midnight-navy-white.jpg" alt="Кросівки nike-cortez">
+                    <h3>Кросівки nike-cortez</h3>
+                    <p>Ціна: 2700грн</p>
+                    <button onclick="addToCart('Кросівки nike-cortez', 2700)">Додати в кошик</button>
+                </div>
+                <div class="product jacket" data-aos="fade-up">
+                    <img src="https://alpha.co.ua/files/products/911.800x600.jpg?15a20d3100ffb24facf07ce2c58fc909" alt="Бомбер Alpha Industries">
+                    <h3>Бомбер Alpha Industries</h3>
+                    <p>Ціна: 4900грн</p>
+                    <button onclick="addToCart('Бомбер Alpha Industries', 4900)">Додати в кошик</button>
+                </div>
+                <div class="product  shoes" data-aos="fade-up">
+                    <img src="https://img.eobuwie.cloud/eob_product_660w_880h(1/b/d/a/1bda34a3176076cf92656ae2ba86fab4f413c0bc_0000207299658_1_.jpg,jpg)/bertsi-dr-martens-1460-11822002-black.jpg">
+                    <h3>Берци Dr. Martens</h3>
+                    <p>Ціна: 6200грн</p>
+                    <button onclick="addToCart('Берци Dr. Martens', 6200)">Додати в кошик</button>
+                </div>
+                <div class="product pants" data-aos="fade-up">
+                    <img src="https://meest-shop.com/imgproxy/insecure/rs:fill:600:600/g:sm/aHR0cDovL2dkMy5hbGljZG4uY29tL2ltZ2V4dHJhL2kyLzIyMTA2MTI2OTU5NDkvTzFDTjAxc3lGbXNLMXRvaDBuQ0g2WjlfISEyMjEwNjEyNjk1OTQ5LnBuZ182MDB4NjAwcTkwLmpwZw==.jpg" alt="штани NIKE">
+                    <h3>Джинси DIME</h3>
+                    <p>Ціна: 3200грн</p>
+                    <button onclick="addToCart('Джинси DIME', 3200)">Додати в кошик</button>
+                </div>
+                <div class="product hoodie" data-aos="fade-up">
+                    <img src="https://i.ebayimg.com/thumbs/images/g/z6AAAOSwjvtnP2Hq/s-l1200.jpg" alt="худі NIKE">
+                    <h3>Кофта Lonsdale</h3>
+                    <p>Ціна: 2200грн</p>
+                    <button onclick="addToCart('Кофта Lonsdale', 2200)">Додати в кошик</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts">
+            <h2>Контакти</h2>
+            <p>Телефон: +380 123 456 789</p>
+            <p>Email: info@shop.com</p>
+            <p>Адреса: м. Київ, вул. Центральна, 1</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Магазин Одягу. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        let cart = [];
+        function filterItems(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ itemName, itemPrice });
+            document.getElementById('cart-count').innerText = cart.length;
+            alert(`Додано до кошика: ${itemName}, ціна: ${itemPrice} грн`);
+        }
+
+        function displayCart() {
+            let cartHtml = '';
+            let total = 0;
+            cart.forEach(item => {
+                cartHtml += `<p>${item.itemName} - ${item.itemPrice} грн</p>`;
+                total += item.itemPrice;
+            });
+            cartHtml += `<p><strong>Загальна сума: ${total} грн</strong></p>`;
+            cartHtml += `<button onclick="checkout()">Оформити замовлення</button>`;
+            document.getElementById('cart-summary').innerHTML = cartHtml;
+        }
+
+        function checkout() {
+            alert("Ваше замовлення оформлено!");
+            cart = [];
+            document.getElementById('cart-count').innerText = cart.length;
+            displayCart();
+        }
+    </script>
+</body>
+</html>
